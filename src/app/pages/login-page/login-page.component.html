@@ -1,0 +1,71 @@
+<section class="hero is-fullheight is-medium is-bold fundo">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <article class="card is-rounded">
+          <div class="card-content">
+            <div class="has-text-centered">
+              <h1 class="title has-text-primary">
+
+                Sistema de Gestão Escolar
+              </h1>
+              <h3 class="subtitle has-text-grey">
+                EGE Sistemas
+              </h3>
+            </div>
+            <br>
+            <form [formGroup]="form" >              
+                <p class="control has-icons-left has-icons-right ">
+                  <input 
+                  class="input is-large" 
+                  type="email" 
+                  placeholder="Usuário" 
+                  formControlName="usuario"
+                  [ngClass]="{'is-danger': (!form.controls.usuario.valid && !form.controls.usuario.pristine) }">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-user-circle"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i class="fa fa-check"></i>
+                  </span>
+                  <span class="tag is-danger" *ngIf="!form.controls.usuario.valid && !form.controls.usuario.pristine">Usuário invalido, precisa ser um e-mail</span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control has-icons-left">
+                  <input 
+                  class="input is-large" 
+                  type="password" 
+                  placeholder="Senha" 
+                  formControlName="senha"
+                  [ngClass]="{'is-danger': (!form.controls.senha.valid && !form.controls.senha.pristine) }">
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-lock"></i>
+                  </span>
+                  <span class="tag is-danger" *ngIf="!form.controls.senha.valid && !form.controls.senha.pristine">Senha invalida</span>
+                </p>
+              </div>
+              <div class="field">
+
+              </div>
+              <div class="field">
+                <p class="control">
+                  <button 
+                  routerLink="/home" 
+                  (click)="submit()" 
+                  class="button is-success is-large is-fullwidth"
+                  [disabled]="!form.valid">
+                    Entrar
+                  </button>
+                </p>
+              </div>
+            </form>
+            <div class="field has-text-centered">
+              <a href="#" class="has-text-primary">Esqueci a senha</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
