@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 // Rotas
 import { Routing, RoutingProviders } from './app.Routing';
@@ -23,6 +24,11 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SignupPageComponent } from './pages/signup-page/signup-page.component';
 import { CartPageComponent } from './pages/cart-page/cart-page.component';
 
+// Services
+import { CartService } from './services/cart.service';
+import { UserMessageService } from './services/user-message.service';
+import { AlunoListPageComponent } from './pages/aluno/list-page/list-page.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,15 +40,17 @@ import { CartPageComponent } from './pages/cart-page/cart-page.component';
     HomePageComponent,
     LoginPageComponent,
     SignupPageComponent,
-    CartPageComponent
+    CartPageComponent,
+    AlunoListPageComponent
   ],
   imports: [
     BrowserModule,
     Routing,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [CartService, UserMessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

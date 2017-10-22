@@ -4,15 +4,16 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class DataService {
+export class AlunoService {
     constructor(private http: Http) {
 
     }
-    createUser(data: any) {
+
+    createAluno(data: any) {
         console.log(data);
     }
 
-    getCourses() {
+    getAlunos() {
         return this.http
             .get('http://localhost:5000/api/aluno')
             .map((res: Response) => res.json());

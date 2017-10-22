@@ -1,0 +1,31 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<app-headbar></app-headbar>
+
+<section class="section">
+    <div class="container">
+        <h2 class="title">Consulta de Alunos</h2>
+        <!-- <h2 class="subtitle">
+        A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
+        </h2> -->
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <form [formGroup]="form">
+            <div class="field">
+                <p class="control">
+                    <button routerLink="/home" (click)="submit()" class="button is-success is-large is-pulled-right" [disabled]="!form.valid">
+                        Pesquisar
+                    </button>
+                </p>
+            </div>
+        </form>
+    </div>
+</section>
+<section class="section" >
+    <div class="container" *ngIf="this.result !== undefined">
+        <h3 class="title">Resultado</h3>
+    </div>
+</section>
+
+<app-footer></app-footer>
